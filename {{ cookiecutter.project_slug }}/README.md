@@ -1,5 +1,7 @@
 # {{ cookiecutter.project_name }}
 
+{{ cookiecutter.project_short_description }}
+
 ## Folder Structure
 
 ### Top Level
@@ -155,4 +157,4 @@ Configuration for [Nx](https://nx.dev/reference/nx-json):
   project's `project.json`
 - `generators`:
   - `@nx/react`:
-  - `@nx/js`: 
+  - `@nx/js`:
