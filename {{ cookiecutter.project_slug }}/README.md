@@ -2,6 +2,44 @@
 
 {{ cookiecutter.project_short_description }}
 
+## Managing the Workspace
+
+VS Code does does a good job managing Nx workspaces through the
+[Nx Console Extension](https://marketplace.visualstudio.com/items?itemName=nrwl.angular-console).
+If you don't use VS Code, you can use the command line to manage the workspace:
+
+```bash
+# Create a new react library.
+pnpm exec nx generate @nx/react:library \
+    --name=some-name \
+    --unitTestRunner=jest \
+    --bundler=rollup  \
+    --component=false \
+    --importPath=@yournamespace/some-name \
+    --publishable=true  \
+    --style=none \
+    --tags="a b c" \
+    --no-interactive --dry-run
+
+# Create a CLI application.
+pnpm exec nx generate @nx/js:library \
+    --name=g11n-cli \
+    --unitTestRunner=jest \
+    --bundler=rollup \
+    --directory=apps \
+    --publishable=true \
+    --importPath=@vebgen/g11n-cli \
+    --includeBabelRc=true \
+    --testEnvironment=node \
+    --no-interactive --dry-run
+
+# Run tests in all projects.
+pnpm exec nx run-many --target=test --all
+
+# Build all projects.
+pnpm exec nx run-many --target=build --all
+```
+
 ## Folder Structure
 
 ### Top Level
